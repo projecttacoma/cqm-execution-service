@@ -1,0 +1,22 @@
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+node_modules/
+tmp/
+
+# yarn error tracking
+yarn-error.log
+
+# rspec failure tracking
+.rspec_status
+.DS_Store
+.byebug_history
+
+# Editor-specific files
+.vscode/
+
