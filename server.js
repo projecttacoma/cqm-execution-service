@@ -1,41 +1,68 @@
-const express = require('express')
-const app = express()
-
+const express = require('express');
+//const engine = require('js-ecqm-engine'); TODO: Add this when js-ecqm-engine is in NPM
+const app = express();
 
 app.use(express.json());
-PORT = process.env.PORT || 8080
 
+LISTEN_PORT = process.env.CQM_EXECUTION_SERVICE_PORT || 8081; // Port to listen on
+REQUIRED_PARAMS = ['measure', 'valueSets', 'patients']; // Required params for calculation
 
-app.get('/', (req, res) => res.send('sup dawg'))
+/**
+ * Version; Informs a client which version of js-ecqm-engine this service
+ * is currently utilizing.
+ *
+ * @name Version
+ * @route {GET} /version
+ */
+app.get('/version', function (request, response) {
+  //response.send(engine.version) TODO: Add this when js-ecqm-engine is in NPM
+  response.send('0.0.1')
+});
 
-app.get('/version', function (req, res) {
-    //maybe replace this with git hash
-    res.send('0.0.1')
-  })
-
-app.post('/calculate', function (req, res) {
-    // console.log(req.body)
-    blob = req.body
-
-    //quick check that at least we have something for each expected parameter - probably just for initial testing
-    required_props = ['measure', 'value_sets', 'patients', 'options']
-    if (!required_props.every(prop=>blob.hasOwnProperty(prop))) {
-        res.status(400).send(
-            {'error':'expected a json object with the following properties: '+required_props.join(', ')+'. request is echoed below',
-            'request':blob})
-        return
+/**
+ * Calculate a CQM.
+ *
+ * @name Calculate
+ * @route {POST} /calculate
+ * @bodyparam measure - the cqm to calculate against.
+ * @bodyparam valueSets - the value sets to use when calculating the measure.
+ * @bodyparam patients - an array of cqm-models based patients to calculate for.
+ * @bodyparam options - optional params for things like generating pretty results.
+ */
+app.post('/calculate', function (request, response) {
+    // Certain params are required for this action, make sure they exist.
+    let missing = []
+    REQUIRED_PARAMS.forEach(function (param) {
+      if (!request.body.hasOwnProperty(param)) {
+        missing.push(param);
+      }
+    });
+    // If there are missing params, return a 400 with a description of which
+    // params were missing.
+    if (missing.length) {
+      response.status(400).send({
+        'error': `Missing required parameter(s): ${missing.join(', ')}`, 'request': request.body
+      });
+      return;
     }
 
-    //echo message for testing
-    res.send({'success':'got your message, and it had everything expected. request is echoed below','request':blob})
-})
+    // Grab params from request.
+    var measure = request.body['measure'];
+    var valueSets = request.body['valueSets'];
+    var patients = request.body['patients'];
+    var options = request.body['options'] || {};
 
+    // TODO: Incorporate js-ecqm-engine to actually do calculation.
+    response.send({
+      'measure': JSON.stringify(measure),
+      'valueSets': JSON.stringify(valueSets),
+      'patients': JSON.stringify(patients),
+      'options': JSON.stringify(options)
+    });
+});
 
+app.listen(LISTEN_PORT, () => console.log('cqm-execution-service is now listening on port ' + LISTEN_PORT));
 
-
-
-app.listen(PORT, () => console.log('app listening on port '+PORT))
-
-app.use(function (req, res, next) {
-    res.status(404).send("NOT FOUND")
-  })
+app.use(function (request, response, next) {
+  response.status(404).send('NOT FOUND')
+});

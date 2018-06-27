@@ -7,16 +7,14 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
+# TODO: This is needed behind corporate proxies, investigate alternatives.
 RUN yarn config set "strict-ssl" false
-#this is needed due to mitre proxy, not ideal in prod
 
 RUN yarn install --only=production
-# If you are building your code for production
-# RUN yarn install --only=production
 
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8081
 
 CMD [ "yarn", "start" ]

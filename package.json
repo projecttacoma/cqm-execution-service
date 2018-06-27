@@ -1,10 +1,19 @@
 {
   "name": "cqm-execution-service",
   "version": "0.0.1",
-  "description": "CQL execution service",
+  "description": "CQM Execution Service",
   "main": "server.js",
   "repository": "https://github.com/projecttacoma/cqm-execution-service.git",
-  "author": "Cole Springate-Combs <cspringatecombs@mitre.org>",
+  "contributors": [
+    {
+      "name": "Cole Springate-Combs",
+      "email": "cspringatecombs@mitre.org"
+    },
+    {
+      "name": "Adam Holmes",
+      "email": "aholmes@mitre.org"
+    }
+  ],
   "license": "Apache-2.0",
   "scripts": {
     "start": "node server.js"
