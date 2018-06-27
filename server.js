@@ -9,8 +9,8 @@ LISTEN_PORT = process.env.CQM_EXECUTION_SERVICE_PORT || 8081; // Port to listen 
 REQUIRED_PARAMS = ['measure', 'valueSets', 'patients']; // Required params for calculation
 
 /**
- * Version; Informs a client which version of js-ecqm-engine this service
- * is currently utilizing.
+ * Version; Informs a client which version of js-ecqm-engine and cqm-models this
+ * service is currently utilizing.
  *
  * @name Version
  * @route {GET} /version
