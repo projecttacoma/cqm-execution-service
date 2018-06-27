@@ -1,4 +1,5 @@
 const express = require('express');
+//const models = require('cqm-models'); TODO: Add this when cqm-models is in NPM
 //const engine = require('js-ecqm-engine'); TODO: Add this when js-ecqm-engine is in NPM
 const app = express();
 
@@ -15,8 +16,10 @@ REQUIRED_PARAMS = ['measure', 'valueSets', 'patients']; // Required params for c
  * @route {GET} /version
  */
 app.get('/version', function (request, response) {
-  //response.send(engine.version) TODO: Add this when js-ecqm-engine is in NPM
-  response.send('0.0.1')
+  response.send({
+    'js-ecqm-engine': '?', //response.send(engine.version) TODO: Add this when js-ecqm-engine is in NPM
+    'cqm-models': '?' //response.send(models.version) TODO: Add this when cqm-models is in NPM
+  });
 });
 
 /**
