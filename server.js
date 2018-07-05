@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({limit: '50mb'}))
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: '5000'}));
 
 LISTEN_PORT = process.env.CQM_EXECUTION_SERVICE_PORT || 8081; // Port to listen on
 REQUIRED_PARAMS = ['measure', 'valueSets', 'patients']; // Required params for calculation
