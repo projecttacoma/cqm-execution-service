@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
 
+const calculator = require('cqm-execution').Calculator;
+// const calculate_with_patients = require('cqm-execution').calculate_with_patients;
+
 app.use(bodyParser.json({limit: '50mb'}))
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: '5000'}));
 
@@ -52,19 +55,37 @@ app.post('/calculate', upload.array(), function (request, response) {
     return;
   }
 
+  var fs = require('fs');
+  fs.writeFile('last_received.json', JSON.stringify(request.body), 'utf8',(err) => {  
+    if (err) throw err;
+    console.log('dawg');
+  });
+  // return
+
   // Grab params from request.
   var measure = request.body['measure'];
   var valueSets = request.body['valueSets'];
   var patients = request.body['patients'];
   var options = request.body['options'] || {};
 
-  // TODO: Incorporate js-ecqm-engine to actually do calculation.
-  response.json({
-    'measure': measure,
-    'valueSets': valueSets,
-    'patients': patients,
-    'options': options
+  // We can take in either an array of value sets, or an object of value sets keyed by oid (the calculator needs the latter)
+  if (Array.isArray(valueSets)){
+    valueSetsByOid = {}
+    for (let valueSet of valueSets) {
+      valueSetsByOid[valueSet.oid] = valueSet
+    }
+  } else {
+    valueSetsByOid = valueSets
+  }
+
+  results = calculator.calculate(measure, patients, valueSetsByOid, options)
+
+  fs.writeFile('last_sent.json', JSON.stringify(results), 'utf8',(err) => {  
+    if (err) throw err;
+    console.log('dawg');
   });
+
+  response.json(results)
 });
 
 app.use(function (request, response, next) {
@@ -72,3 +93,4 @@ app.use(function (request, response, next) {
 });
 
 module.exports = app.listen(LISTEN_PORT, () => console.log('cqm-execution-service is now listening on port ' + LISTEN_PORT));
+
