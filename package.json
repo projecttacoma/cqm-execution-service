@@ -17,12 +17,11 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha spec.js"
+    "test": "mocha spec/server_spec.js"
   },
   "dependencies": {
-    "cqm-execution": "../cqm-execution", 
-    "express": "^4.16.3",
-    "multer": "^1.3.1"
+    "cqm-execution": "https://github.com/projecttacoma/cqm-execution.git#bonnie_backend_execution", 
+    "express": "^4.16.3"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
