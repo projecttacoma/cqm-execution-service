@@ -1,5 +1,7 @@
 FROM node:9-slim
 
+RUN apt-get update && apt-get install -y git-core
+
 WORKDIR /usr/src/app
 
 # Install app dependencies
