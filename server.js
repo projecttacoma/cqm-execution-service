@@ -28,7 +28,7 @@ app.get('/version', function (request, response) {
  * @name Calculate
  * @route {POST} /calculate
  * @bodyparam measure - the cqm to calculate against.
- * @bodyparam valueSetsByOid - the value sets to use when calculating the measure. Can either be an array, or an object keyed by OID and then version.
+ * @bodyparam valueSetsByOid - the value sets to use when calculating the measure. Must be an object keyed by OID and then version.
  * @bodyparam patients - an array of cqm-models based patients to calculate for.
  * @bodyparam options - optional params for things like generating pretty results.
  */
