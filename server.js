@@ -1,18 +1,12 @@
-//const models = require('cqm-models'); TODO: Add this when cqm-models is in NPM
-//const engine = require('js-ecqm-engine'); TODO: Add this when js-ecqm-engine is in NPM
 var app = require('express')();
 var bodyParser = require('body-parser');
-var multer = require('multer');
-var upload = multer();
-
-const calculator = require('cqm-execution').Calculator;
-// const calculate_with_patients = require('cqm-execution').calculate_with_patients;
+var calculator = require('cqm-execution').Calculator;
 
 app.use(bodyParser.json({limit: '50mb'}))
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: '5000'}));
 
 LISTEN_PORT = process.env.CQM_EXECUTION_SERVICE_PORT || 8081; // Port to listen on
-REQUIRED_PARAMS = ['measure', 'valueSets', 'patients']; // Required params for calculation
+REQUIRED_PARAMS = ['measure', 'valueSetsByOid', 'patients']; // Required params for calculation
 
 /**
  * Version; Informs a client which version of js-ecqm-engine and cqm-models this
@@ -23,7 +17,7 @@ REQUIRED_PARAMS = ['measure', 'valueSets', 'patients']; // Required params for c
  */
 app.get('/version', function (request, response) {
   response.send({
-    'js-ecqm-engine': '?', //response.send(engine.version) TODO: Add this when js-ecqm-engine is in NPM
+    'cqm-execution': '?', //response.send(engine.version) TODO: Add this when cqm-execution is in NPM
     'cqm-models': '?' //response.send(models.version) TODO: Add this when cqm-models is in NPM
   });
 });
@@ -34,11 +28,11 @@ app.get('/version', function (request, response) {
  * @name Calculate
  * @route {POST} /calculate
  * @bodyparam measure - the cqm to calculate against.
- * @bodyparam valueSets - the value sets to use when calculating the measure.
+ * @bodyparam valueSetsByOid - the value sets to use when calculating the measure. Can either be an array, or an object keyed by OID and then version.
  * @bodyparam patients - an array of cqm-models based patients to calculate for.
  * @bodyparam options - optional params for things like generating pretty results.
  */
-app.post('/calculate', upload.array(), function (request, response) {
+app.post('/calculate', function (request, response) {
   // Certain params are required for this action, make sure they exist.
   let missing = []
   REQUIRED_PARAMS.forEach(function (param) {
@@ -55,37 +49,25 @@ app.post('/calculate', upload.array(), function (request, response) {
     return;
   }
 
-  var fs = require('fs');
-  fs.writeFile('last_received.json', JSON.stringify(request.body), 'utf8',(err) => {  
-    if (err) throw err;
-    console.log('dawg');
-  });
-  // return
-
   // Grab params from request.
   var measure = request.body['measure'];
-  var valueSets = request.body['valueSets'];
+  var valueSetsByOid = request.body['valueSetsByOid'];
   var patients = request.body['patients'];
   var options = request.body['options'] || {};
 
-  // We can take in either an array of value sets, or an object of value sets keyed by oid (the calculator needs the latter)
-  if (Array.isArray(valueSets)){
-    valueSetsByOid = {}
-    for (let valueSet of valueSets) {
-      valueSetsByOid[valueSet.oid] = valueSet
-    }
-  } else {
-    valueSetsByOid = valueSets
+  if (Array.isArray(valueSetsByOid)){
+    response.status(400).send({'input error': 'value sets must be passed as an object keyed by oid and then version, not an array'})
+    return
   }
 
-  results = calculator.calculate(measure, patients, valueSetsByOid, options)
+  try {
+    results = calculator.calculate(measure, patients, valueSetsByOid, options)
+    response.json(results)
+  } catch(error) {
+    response.status(500).send({'error in the calculation engine': error})
+    return
+  }
 
-  fs.writeFile('last_sent.json', JSON.stringify(results), 'utf8',(err) => {  
-    if (err) throw err;
-    console.log('dawg');
-  });
-
-  response.json(results)
 });
 
 app.use(function (request, response, next) {
