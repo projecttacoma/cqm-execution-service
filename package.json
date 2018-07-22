@@ -20,12 +20,13 @@
     "test": "nyc --reporter=html --reporter=text mocha spec/server_spec.js"
   },
   "dependencies": {
+    "compression": "^1.7.3",
     "cqm-execution": "https://github.com/projecttacoma/cqm-execution.git#bonnie_backend_execution",
     "express": "^4.16.3"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
-    "supertest": "^3.1.0",
-    "nyc": "^12.0.2"
+    "nyc": "^12.0.2",
+    "supertest": "^3.1.0"
   }
 }
