@@ -1,7 +1,9 @@
 var app = require('express')();
 var bodyParser = require('body-parser');
 var calculator = require('cqm-execution').Calculator;
+var compression = require('compression')
 
+app.use(compression());
 app.use(bodyParser.json({limit: '50mb'}))
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: '5000'}));
 
@@ -33,6 +35,7 @@ app.get('/version', function (request, response) {
  * @bodyparam options - optional params for things like generating pretty results.
  */
 app.post('/calculate', function (request, response) {
+  console.log("req")
   // Certain params are required for this action, make sure they exist.
   let missing = []
   REQUIRED_PARAMS.forEach(function (param) {
