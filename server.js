@@ -35,7 +35,6 @@ app.get('/version', function (request, response) {
  * @bodyparam options - optional params for things like generating pretty results.
  */
 app.post('/calculate', function (request, response) {
-  console.log("req")
   // Certain params are required for this action, make sure they exist.
   let missing = []
   REQUIRED_PARAMS.forEach(function (param) {
