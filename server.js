@@ -94,7 +94,7 @@ app.post('/calculate', upload.array(), function (request, response) {
 
   logger.log({
     level: 'info',
-    message: 'GET /calculate measure: ' + measure['cms_id'] + 'patient_count: ' + patients.length
+    message: 'GET /calculate measure: ' + measure['cms_id'] + ' patient_count: ' + patients.length
   });
   // TODO: Incorporate js-ecqm-engine to actually do calculation.
   response.json({
