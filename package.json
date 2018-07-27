@@ -17,7 +17,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "node server.js",
-    "test": "nyc --reporter=html --reporter=text mocha spec/server_spec.js"
+    "test": "nyc --reporter=html --reporter=text mocha spec/server_spec.js",
+    "testRunningServer": "nyc --reporter=html --reporter=text mocha spec/server_spec.js againstRunning"
   },
   "dependencies": {
     "compression": "^1.7.3",
@@ -27,7 +28,8 @@
   "devDependencies": {
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
-    "supertest": "^3.1.0"
+    "supertest": "^3.1.0",
+    "request":   "^2.87.0"
   },
   "nyc": {
     "exclude": ["**/*spec.js"]
