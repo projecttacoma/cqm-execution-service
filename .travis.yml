@@ -8,5 +8,5 @@ cache:
 script:
   - yarn test
   - docker build -t docker/cqm-execution-service .
-  - docker run -p 8081:8081 -d docker/cqm-execution-service
+  - docker run -p 127.0.0.1:8081:8081 -d docker/cqm-execution-service
   - yarn testRunningServer
