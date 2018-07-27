@@ -6,5 +6,7 @@ cache:
   directories:
     - "node_modules"
 script:
-  - npm run test
+  - yarn test
   - docker build -t docker/cqm-execution-service .
+  - docker run -p 8081:8081 -d docker/cqm-execution-service
+  - yarn testRunningServer

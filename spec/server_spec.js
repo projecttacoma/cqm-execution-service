@@ -2,6 +2,8 @@ const request = require('supertest');
 const fs = require('fs');
 const path = require('path');
 
+const testAgainstAlreadyRunningServer = (process.argv[3] == 'againstRunning')
+
 const basePath = path.join('spec', 'fixtures', 'json');
 const getJSONFixture = (fixturePath) => {
   var contents = fs.readFileSync(path.join(basePath, fixturePath));
@@ -24,11 +26,12 @@ describe('cqm-execution-service', function () {
   var server;
 
   beforeEach(function () {
-    server = require('../server');
+    server = testAgainstAlreadyRunningServer ? 'http://localhost:8081' : require('../server');
   });
 
   afterEach(function () {
-    server.close();
+    if (!testAgainstAlreadyRunningServer)
+      server.close();
   });
 
   it('responds to /version', function testVersion(done) {
