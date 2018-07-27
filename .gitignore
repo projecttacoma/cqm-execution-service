@@ -20,3 +20,5 @@ yarn-error.log
 # Editor-specific files
 .vscode/
 
+# ssl setup script(kept in server-scripts)
+docker_ssl_setup.sh
