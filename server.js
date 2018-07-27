@@ -1,14 +1,14 @@
-var app = require('express')();
-var bodyParser = require('body-parser');
-var calculator = require('cqm-execution').Calculator;
-var compression = require('compression')
+const app = require('express')();
+const bodyParser = require('body-parser');
+const calculator = require('cqm-execution').Calculator;
+const compression = require('compression');
 
 app.use(compression());
-app.use(bodyParser.json({limit: '50mb'}))
-app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: '5000'}));
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: '5000' }));
 
-LISTEN_PORT = process.env.CQM_EXECUTION_SERVICE_PORT || 8081; // Port to listen on
-REQUIRED_PARAMS = ['measure', 'valueSetsByOid', 'patients']; // Required params for calculation
+const LISTEN_PORT = process.env.CQM_EXECUTION_SERVICE_PORT || 8081; // Port to listen on
+const REQUIRED_PARAMS = ['measure', 'valueSetsByOid', 'patients']; // Required params for calculation
 
 /**
  * Version; Informs a client which version of js-ecqm-engine and cqm-models this
@@ -46,34 +46,31 @@ app.post('/calculate', function (request, response) {
   // params were missing.
   if (missing.length) {
     response.status(400).send({
-      'error': `Missing required parameter(s): ${missing.join(', ')}`, 'request': request.body
+      error: `Missing required parameter(s): ${missing.join(', ')}`, request: request.body
     });
     return;
   }
 
   // Grab params from request.
-  var measure = request.body['measure'];
-  var valueSetsByOid = request.body['valueSetsByOid'];
-  var patients = request.body['patients'];
-  var options = request.body['options'] || {};
+  const {measure, valueSetsByOid, patients, options = {}} = request.body
 
   if (Array.isArray(valueSetsByOid)){
-    response.status(400).send({'input error': 'value sets must be passed as an object keyed by oid and then version, not an array'})
-    return
+    response.status(400).send({'input error': 'value sets must be passed as an object keyed by oid and then version, not an array'});
+    return;
   }
 
   try {
-    results = calculator.calculate(measure, patients, valueSetsByOid, options)
-    response.json(results)
+    results = calculator.calculate(measure, patients, valueSetsByOid, options);
+    response.json(results);
   } catch(error) {
-    response.status(500).send({'error in the calculation engine': error})
-    return
+    response.status(500).send({'error in the calculation engine': error});
+    return;
   }
 
 });
 
 app.use(function (request, response, next) {
-  response.status(404).send()
+  response.status(404).send();
 });
 
 module.exports = app.listen(LISTEN_PORT, () => console.log('cqm-execution-service is now listening on port ' + LISTEN_PORT));
