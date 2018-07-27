@@ -7,5 +7,4 @@ cache:
     - "node_modules"
 script:
   - npm run test
-  - sudo service docker start
   - docker build -t docker/cqm-execution-service .
