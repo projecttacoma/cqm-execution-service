@@ -17,7 +17,7 @@ const patients = [];
 patients.push(ippPopFail);
 patients.push(denexPop18StratPass);
 patients.push(pop1_1318Pass);
-options = {}
+const options = {}
 
 
 describe('cqm-execution-service', function () {
@@ -37,7 +37,7 @@ describe('cqm-execution-service', function () {
 
 
   it('responds to /calculate with the result to a correct post', function testCalculate(done) {
-    data = {
+    let data = {
       'measure': measure,
       'valueSetsByOid': valueSetsByOid,
       'patients': patients,
@@ -52,7 +52,7 @@ describe('cqm-execution-service', function () {
   });
 
   it('responds to /calculate with 400 to value sets as array instead of object', function testCalculateWOParams(done) {
-    data = {
+    let data = {
       'measure': measure,
       'valueSetsByOid': ["a","b"],
       'patients': patients,
@@ -64,7 +64,7 @@ describe('cqm-execution-service', function () {
   it('responds to /calculate with 500 for data that causes calculation to fail', function testCalculateWOParams(done) {
     let measure = getJSONFixture('measures/CMS137v7/CMS137v7.json');
     delete measure.elm;
-    data = {
+    let data = {
       'measure': measure,
       'valueSetsByOid': valueSetsByOid,
       'patients': patients,
