@@ -18,7 +18,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "nyc --reporter=html --reporter=text mocha spec/server_spec.js",
-    "testRunningServer": "nyc --reporter=html --reporter=text mocha spec/server_spec.js againstRunning"
+    "testRunningServer": "nyc --reporter=html --reporter=text mocha spec/server_spec_against_running.js"
   },
   "dependencies": {
     "compression": "^1.7.3",
