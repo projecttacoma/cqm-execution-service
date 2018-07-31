@@ -32,6 +32,6 @@
     "request":   "^2.87.0"
   },
   "nyc": {
-    "exclude": ["**/*spec.js"]
+    "exclude": ["**/*spec.js","spec/**"]
   }
 }
