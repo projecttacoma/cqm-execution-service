@@ -17,13 +17,14 @@
   "license": "Apache-2.0",
   "scripts": {
     "start": "node server.js",
-    "test": "nyc --reporter=html --reporter=text mocha spec/server_spec.js",
-    "testRunningServer": "nyc --reporter=html --reporter=text mocha spec/server_spec_against_running.js"
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha spec/server_spec.js",
+    "testRunningServer": "NODE_ENV=test nyc --reporter=html --reporter=text mocha spec/server_spec_against_running.js"
   },
   "dependencies": {
     "compression": "^1.7.3",
     "cqm-execution": "https://github.com/projecttacoma/cqm-execution.git#bonnie_backend_execution",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",

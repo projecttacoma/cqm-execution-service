@@ -22,3 +22,6 @@ yarn-error.log
 
 # ssl setup script(kept in server-scripts)
 docker_ssl_setup.sh
+
+#test log file
+test_log.info
