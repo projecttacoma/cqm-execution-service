@@ -12,6 +12,10 @@
     {
       "name": "Adam Holmes",
       "email": "aholmes@mitre.org"
+    },
+    {
+      "name": "Luke Osborne",
+      "email": "lwosborne@mitre.org"
     }
   ],
   "license": "Apache-2.0",
@@ -20,7 +24,7 @@
     "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha spec/server_spec.js",
     "testRunningServer": "NODE_ENV=test mocha spec/server_spec_against_running.js",
     "docker-build": "docker build -t docker/cqm-execution-service .",
-    "docker-run": "docker run --name cqm-execution-service -p 8081:8081 -d docker/cqm-execution-service",
+    "docker-run": "docker run --log-driver json-file --log-opt max-size=10m --log-opt max-file=4 -p 8081:8081 --name cqm-execution-service -d docker/cqm-execution-service",
     "docker-stop": "docker stop cqm-execution-service",
     "docker-clean": "yarn docker-stop; docker rm cqm-execution-service"
   },
