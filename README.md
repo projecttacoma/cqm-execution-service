@@ -18,10 +18,29 @@ cd cqm-execution-service/
 
 3. Build the project as a Docker image.
 ```
-docker build -t docker/cqm-execution-service .
+yarn docker-build
 ```
 
 4. Run the Docker image.
 ```
-docker run -p 8081:8081 -d docker/cqm-execution-service
+yarn docker-run
+```
+
+5. Stop the running Docker image.
+```
+yarn docker-stop
+```
+
+## Testing
+
+1. Run the unit tests.
+```
+yarn test
+```
+
+2. Run the tests against a live server.
+```
+yarn docker-run
+yarn testRunningServer
+yarn docker-clean
 ```
