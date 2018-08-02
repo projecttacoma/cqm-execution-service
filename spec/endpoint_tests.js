@@ -24,11 +24,18 @@ module.exports = (testAgainstAlreadyRunningServer = false) => {
   describe('cqm-execution-service', function () {
     var server;
 
-    beforeEach(function () {
-      server = testAgainstAlreadyRunningServer ? 'http://localhost:8081' : require('../server');
+    before(function (done) {
+      this.timeout(5000);
+      if (testAgainstAlreadyRunningServer) {
+        server = 'http://localhost:8081';
+        done()
+      } else {
+        server = require('../server');
+        server.on( "listening", () => done() ); //wait for server to start
+      }
     });
 
-    afterEach(function () {
+    after(function () {
       if (!testAgainstAlreadyRunningServer)
         server.close();
     });
