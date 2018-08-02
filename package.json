@@ -18,7 +18,11 @@
   "scripts": {
     "start": "node server.js",
     "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha spec/server_spec.js",
-    "testRunningServer": "NODE_ENV=test mocha spec/server_spec_against_running.js"
+    "testRunningServer": "NODE_ENV=test mocha spec/server_spec_against_running.js",
+    "docker-build": "docker build -t docker/cqm-execution-service .",
+    "docker-run": "docker run --name cqm-execution-service -p 8081:8081 -d docker/cqm-execution-service",
+    "docker-stop": "docker stop cqm-execution-service",
+    "docker-clean": "yarn docker-stop; docker rm cqm-execution-service"
   },
   "dependencies": {
     "compression": "^1.7.3",
