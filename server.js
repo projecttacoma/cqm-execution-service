@@ -91,8 +91,8 @@ app.use(function (request, response, next) {
   response.status(404).send();
 });
 
-module.exports = app.listen(LISTEN_PORT, () => 
+module.exports = app.listen(LISTEN_PORT, () =>
 {
   logger.log({level: 'info', message: 'cqm-execution-service is now listening on port ' + LISTEN_PORT});
   app.emit("listening")
-}); 
+});
