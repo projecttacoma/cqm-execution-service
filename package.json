@@ -22,7 +22,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "mkdir -p coverage && NODE_ENV=test nyc --reporter=text-lcov --reporter=html mocha spec/server_spec.js > coverage/coverage.lcov",
-    "testRunningServer": "NODE_ENV=test mocha spec/server_spec_against_running.js",
+    "testRunningServer": "mkdir -p coverage && NODE_ENV=test nyc --reporter=text-lcov --reporter=html mocha spec/server_spec_against_running.js > coverage/coverage.lcov",
     "docker-build": "docker build -t tacoma/cqm-execution-service .",
     "docker-run": "docker run --log-driver json-file --log-opt max-size=10m --log-opt max-file=4 -p 8081:8081 --name cqm-execution-service -d tacoma/cqm-execution-service",
     "docker-stop": "docker stop cqm-execution-service",

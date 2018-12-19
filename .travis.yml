@@ -16,3 +16,4 @@ script:
   - yarn docker-run
   - sleep 3
   - yarn testRunningServer
+  - codecov
