@@ -10,6 +10,7 @@ cache:
 services:
   - docker
 script:
+  - yarn install
   - yarn test
   - codecov
   - yarn docker-build
