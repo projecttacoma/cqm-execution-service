@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/projecttacoma/cqm-execution-service.svg?branch=master)](https://travis-ci.org/projecttacoma/cqm-execution-service)
+[![codecov](https://codecov.io/gh/projecttacoma/cqm-execution-service/branch/master/graph/badge.svg)](https://codecov.io/gh/projecttacoma/cqm-execution-service)
 
 # cqm-execution-service
 
