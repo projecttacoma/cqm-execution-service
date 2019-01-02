@@ -1,4 +1,6 @@
 language: node_js
+install:
+  - npm install -g codecov
 node_js:
   - "node"
   - "lts/*"
@@ -8,8 +10,11 @@ cache:
 services:
   - docker
 script:
+  - yarn install
   - yarn test
+  - codecov
   - yarn docker-build
   - yarn docker-run
   - sleep 3
   - yarn testRunningServer
+  - codecov
