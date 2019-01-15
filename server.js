@@ -69,14 +69,8 @@ app.post('/calculate', function (request, response) {
   // Grab params from request.
   const {measure, valueSetsByOid, patients, options = {}} = request.body
 
-  if (Array.isArray(valueSetsByOid)){
-    logger.log({ level: 'error', message: 'GET /calculate. valueSets passed as array, headers: ' + JSON.stringify(request.headers) });
-    response.status(400).send({'input error': 'value sets must be passed as an object keyed by oid and then version, not an array'});
-    return;
-  }
-
   try {
-    results = calculator.calculate(measure, patients, valueSetsByOid, options);
+    results = calculator.calculate(measure, patients, JSON.parse(valueSetsByOid), options);
     logger.log({ level: 'info', message: 'GET /calculate. measure: ' + measure['cms_id'] + ' patient_count: ' + patients.length });
     response.json(results);
   } catch(error) {
