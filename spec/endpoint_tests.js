@@ -8,8 +8,8 @@ const getJSONFixture = (fixturePath) => {
   return JSON.parse(contents);
 }
 
-const valueSetsByOid = getJSONFixture('measures/CMS137v7/value_sets.json');
-const measure = getJSONFixture('measures/CMS137v7/CMS137v7.json');
+const valueSets = getJSONFixture('cqm_measures/CMS137v7/value_sets.json');
+const measure = getJSONFixture('cqm_measures/CMS137v7/CMS137v7.json');
 const ippPopFail = getJSONFixture('patients/CMS137v7/2YoungDependence&TX_IPPPopFail.json');
 const denexPop18StratPass = getJSONFixture('patients/CMS137v7/Dependency<60daysSB4_DENEXPop>18StratPass.json');
 const pop1_1318Pass = getJSONFixture('patients/CMS137v7/Therapy<14DaysDx_NUMERPop1_13-18Pass.json');
@@ -48,11 +48,10 @@ module.exports = (testAgainstAlreadyRunningServer = false) => {
     it('responds to /calculate with the result to a correct post', function testCalculate(done) {
       let data = {
         'measure': measure,
-        'valueSetsByOid': valueSetsByOid,
+        'valueSets': valueSets,
         'patients': patients,
         'options': options
       }
-
       request(server).post('/calculate').send(data).expect('Content-Type', /json/).expect(200,done)
     });
 
@@ -60,10 +59,10 @@ module.exports = (testAgainstAlreadyRunningServer = false) => {
       request(server).post('/calculate').send({}).expect(400, done);
     });
 
-    it('responds to /calculate with 400 to value sets as array instead of object', function testCalculateWOParams(done) {
+    it('responds to /calculate with 400 to value sets as object instead of array', function testCalculateWOParams(done) {
       let data = {
         'measure': measure,
-        'valueSetsByOid': ["a","b"],
+        'valueSets': {},
         'patients': patients,
         'options': options
       }
@@ -71,11 +70,11 @@ module.exports = (testAgainstAlreadyRunningServer = false) => {
     });
 
     it('responds to /calculate with 500 for data that causes calculation to fail', function testCalculateWOParams(done) {
-      let measure = getJSONFixture('measures/CMS137v7/CMS137v7.json');
-      delete measure.elm;
+      let measure = getJSONFixture('cqm_measures/CMS137v7/CMS137v7.json');
+      delete measure.cql_libraries;
       let data = {
         'measure': measure,
-        'valueSetsByOid': valueSetsByOid,
+        'valueSets': valueSets,
         'patients': patients,
         'options': options
       }
