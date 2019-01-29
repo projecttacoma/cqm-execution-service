@@ -9,7 +9,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: '5000' }));
 
 const LISTEN_PORT = process.env.CQM_EXECUTION_SERVICE_PORT || 8081; // Port to listen on
-const REQUIRED_PARAMS = ['measure', 'valueSetsByOid', 'patients']; // Required params for calculation
+const REQUIRED_PARAMS = ['measure', 'valueSets', 'patients']; // Required params for calculation
 
 
 // All logging is to the console, docker can save these messages to file if desired
@@ -44,7 +44,7 @@ app.get('/version', function (request, response) {
  * @name Calculate
  * @route {POST} /calculate
  * @bodyparam measure - the cqm to calculate against.
- * @bodyparam valueSetsByOid - the value sets to use when calculating the measure. Must be an object keyed by OID and then version.
+ * @bodyparam valueSets - array of the value sets to use when calculating the measure
  * @bodyparam patients - an array of cqm-models based patients to calculate for.
  * @bodyparam options - optional params for things like generating pretty results.
  */
@@ -67,10 +67,16 @@ app.post('/calculate', function (request, response) {
   }
 
   // Grab params from request.
-  const {measure, valueSetsByOid, patients, options = {}} = request.body
+  const {measure, valueSets, patients, options = {}} = request.body
+
+  if (!Array.isArray(valueSets)){
+    logger.log({ level: 'error', message: 'GET /calculate. valueSets passed as array, headers: ' + JSON.stringify(request.headers) });
+    response.status(400).send({'input error': 'value sets must be passed in as an array'});
+    return;
+  }
 
   try {
-    results = calculator.calculate(measure, patients, valueSetsByOid, options);
+    results = calculator.calculate(measure, patients, valueSets, options);
     logger.log({ level: 'info', message: 'GET /calculate. measure: ' + measure['cms_id'] + ' patient_count: ' + patients.length });
     response.json(results);
   } catch(error) {
