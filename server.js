@@ -70,7 +70,7 @@ app.post('/calculate', function (request, response) {
   const {measure, valueSetsByOid, patients, options = {}} = request.body
 
   try {
-    results = calculator.calculate(measure, patients, JSON.parse(valueSetsByOid), options);
+    results = calculator.calculate(measure, patients, valueSetsByOid, options);
     logger.log({ level: 'info', message: 'GET /calculate. measure: ' + measure['cms_id'] + ' patient_count: ' + patients.length });
     response.json(results);
   } catch(error) {
