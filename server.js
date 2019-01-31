@@ -70,7 +70,7 @@ app.post('/calculate', function (request, response) {
   const {measure, valueSets, patients, options = {}} = request.body
 
   if (!Array.isArray(valueSets)){
-    logger.log({ level: 'error', message: 'GET /calculate. valueSets passed as array, headers: ' + JSON.stringify(request.headers) });
+    logger.log({ level: 'error', message: 'GET /calculate. valueSets not passed as an array, headers: ' + JSON.stringify(request.headers) });
     response.status(400).send({'input error': 'value sets must be passed in as an array'});
     return;
   }
