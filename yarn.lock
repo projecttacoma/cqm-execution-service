@@ -598,10 +598,18 @@ cql-execution@1.3.2:
     moment "^2.20.1"
     ucum "0.0.7"
 
-cqm-execution@projecttacoma/cqm-execution#bonnie-v3.1.1:
-  version "1.0.2"
-  resolved "https://codeload.github.com/projecttacoma/cqm-execution/tar.gz/658231f456e2a750151d3ddfcb2a6cf1f3118a7d"
+"cql-execution@https://github.com/cqframework/cql-execution.git#bonnie-v3.1.1":
+  version "1.3.2"
+  resolved "https://github.com/cqframework/cql-execution.git#d43acd35cbb9736a0b1c423cefdf3b38cf79a51a"
   dependencies:
+    moment "^2.20.1"
+    ucum "0.0.7"
+
+cqm-execution@projecttacoma/cqm-execution#bonnie-v3.1.1-patch:
+  version "1.0.2"
+  resolved "https://codeload.github.com/projecttacoma/cqm-execution/tar.gz/c54ce7271be8f8bf9d1200796eb0344ddb73fb61"
+  dependencies:
+    cql-execution "https://github.com/cqframework/cql-execution.git#bonnie-v3.1.1"
     cqm-models "1.0.2"
     lodash "^4.17.5"
     moment "^2.21.0"
