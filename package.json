@@ -1,6 +1,6 @@
 {
   "name": "cqm-execution-service",
-  "version": "0.0.1",
+  "version": "1.0.0.1",
   "description": "CQM Execution Service",
   "main": "server.js",
   "repository": "https://github.com/projecttacoma/cqm-execution-service.git",
