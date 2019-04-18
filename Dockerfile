@@ -10,12 +10,12 @@ RUN ./docker_ssl_setup.sh; exit 0
 
 RUN apt-get update && apt-get install -y git-core
 
+# Bundle app source
+COPY . /usr/src/app
+
 WORKDIR /usr/src/app
 
 RUN yarn install --only=production
-
-# Bundle app source
-COPY . .
 
 EXPOSE 8081
 
