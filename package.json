@@ -1,6 +1,6 @@
 {
   "name": "cqm-execution-service",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CQM Execution Service",
   "main": "server.js",
   "repository": "https://github.com/projecttacoma/cqm-execution-service.git",
@@ -32,17 +32,20 @@
   },
   "dependencies": {
     "compression": "^1.7.3",
-    "cqm-execution": "https://github.com/projecttacoma/cqm-execution.git#bonnie-patch",
+    "cqm-execution": "^1.0.3",
     "express": "^4.16.3",
     "winston": "^3.0.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
-    "supertest": "^3.1.0",
-    "request":   "^2.87.0"
+    "request": "^2.87.0",
+    "supertest": "^3.1.0"
   },
   "nyc": {
-    "exclude": ["**/*spec.js","spec/**"]
+    "exclude": [
+      "**/*spec.js",
+      "spec/**"
+    ]
   }
 }
