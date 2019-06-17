@@ -501,7 +501,7 @@ cql-execution@^1.3.3:
 
 "cqm-execution@https://github.com/projecttacoma/cqm-execution.git#codesystemoid_2.0":
   version "1.0.2"
-  resolved "https://github.com/projecttacoma/cqm-execution.git#4a3e3734d25ea6e4dd3ed87dd56455b63ebf7fa0"
+  resolved "https://github.com/projecttacoma/cqm-execution.git#95b499c2886aa8a2322c33ce8da69d5fb597e751"
   dependencies:
     cqm-models "https://github.com/projecttacoma/cqm-models#codesystemoid"
     lodash "^4.17.5"
