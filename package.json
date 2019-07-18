@@ -23,27 +23,32 @@
   },
   "license": "Apache-2.0",
   "scripts": {
+    "build-cql": "cd ./node_modules/cql-execution && yarn install && cd ../../",
     "start": "node server.js",
     "test": "mkdir -p coverage && NODE_ENV=test ./node_modules/nyc/bin/nyc.js --reporter=text-lcov --reporter=html mocha spec/server_spec.js > coverage/coverage.lcov",
     "testRunningServer": "mkdir -p coverage && NODE_ENV=test ./node_modules/nyc/bin/nyc.js --reporter=text-lcov --reporter=html mocha spec/server_spec_against_running.js > coverage/coverage-running.lcov",
     "docker-build": "docker build -t tacoma/cqm-execution-service .",
     "docker-run": "docker run --log-driver json-file --log-opt max-size=10m --log-opt max-file=4 -p 8081:8081 --name cqm-execution-service -d tacoma/cqm-execution-service",
     "docker-stop": "docker stop cqm-execution-service",
-    "docker-clean": "yarn docker-stop; docker rm cqm-execution-service"
+    "docker-clean": "yarn docker-stop; docker rm cqm-execution-service",
+    "prepublish": "./bin/build_cql_execution.sh"
   },
   "dependencies": {
     "compression": "^1.7.3",
-    "cqm-execution": "^1.0.2",
+    "cqm-execution": "https://github.com/projecttacoma/cqm-execution.git",
     "express": "^4.16.3",
     "winston": "^3.0.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
     "nyc": "^12.0.2",
-    "supertest": "^3.1.0",
-    "request":   "^2.87.0"
+    "request": "^2.87.0",
+    "supertest": "^3.1.0"
   },
   "nyc": {
-    "exclude": ["**/*spec.js","spec/**"]
+    "exclude": [
+      "**/*spec.js",
+      "spec/**"
+    ]
   }
 }
