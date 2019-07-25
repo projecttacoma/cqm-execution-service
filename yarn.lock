@@ -493,14 +493,14 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
 
 "cql-execution@https://github.com/cqframework/cql-execution#master":
   version "1.3.4"
-  resolved "https://github.com/cqframework/cql-execution#cf599c9720b5f0d1338d838d3059b11f52b9b91e"
+  resolved "https://github.com/cqframework/cql-execution#4f9535a7fbcff5923b11ddf7dafe55442c81d1fa"
   dependencies:
     moment "^2.20.1"
     ucum "0.0.7"
 
 "cqm-execution@https://github.com/projecttacoma/cqm-execution#2019-standards-update":
   version "2.0.0"
-  resolved "https://github.com/projecttacoma/cqm-execution#0f21099256dacee1452b7c87cf2c46afccb22960"
+  resolved "https://github.com/projecttacoma/cqm-execution#97581beeedf81cab20c60568df5a36c38f2269ca"
   dependencies:
     cqm-models "https://github.com/projecttacoma/cqm-models#2019-standards-update"
     lodash "^4.17.5"
@@ -508,7 +508,7 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
 
 "cqm-models@https://github.com/projecttacoma/cqm-models#2019-standards-update":
   version "2.0.0"
-  resolved "https://github.com/projecttacoma/cqm-models#e3a66445ef41ac49ca47d187ce7a1822a05829fb"
+  resolved "https://github.com/projecttacoma/cqm-models#cf36e145241a941324806236e1e5acb09a729ebf"
   dependencies:
     cql-execution "https://github.com/cqframework/cql-execution#master"
     mongoose "^5.4.14"
@@ -1301,10 +1301,15 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
-lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.5:
+lodash@^4.17.10:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
+
+lodash@^4.17.11, lodash@^4.17.5:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 logform@^1.9.0:
   version "1.9.1"
@@ -1505,9 +1510,9 @@ mongoose-legacy-pluralize@1.0.2:
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
 
 mongoose@^5.4.14:
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.6.1.tgz#4efc3373b8121fdac4192896e303bb8cc572907b"
-  integrity sha512-/EBoXS+fZv8dYf0VKMXwhTEVYUI+6EbmVhmV2DzO9BGacTSgStQprU09rZYfVxe8EmLhmTrSV5eCIRLBYuXGag==
+  version "5.6.6"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.6.6.tgz#78953b9ea91b1bf685ce59d7737100352af627f6"
+  integrity sha512-5uecJSyl2TwbGM9vJteP4C54zsQL6qllq1qe/JPGO3oqIWcK/PnzCL91E0gfPH5VVpvWGX+6PafNYmU3NK8S7w==
   dependencies:
     async "2.6.2"
     bson "~1.1.1"
@@ -1945,10 +1950,15 @@ safe-buffer@5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
-safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
+
+safe-buffer@^5.1.2:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.0.tgz#b74daec49b1148f88c64b68d49b1e815c1f2f519"
+  integrity sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
 
 safe-regex@^1.1.0:
   version "1.1.0"
