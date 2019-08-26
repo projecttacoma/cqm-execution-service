@@ -7335,7 +7335,7 @@
                 "localId": "2",
                 "locator": "5:1-5:87",
                 "name": "LOINC:2.46",
-                "id": "LOINC",
+                "id": "2.16.840.1.113883.6.1",
                 "version": "urn:hl7:version:2.46",
                 "accessLevel": "Public"
               },
@@ -7343,7 +7343,7 @@
                 "localId": "3",
                 "locator": "6:1-6:97",
                 "name": "SNOMEDCT:2016-03",
-                "id": "SNOMED-CT",
+                "id": "2.16.840.1.113883.6.96",
                 "version": "urn:hl7:version:2016-03",
                 "accessLevel": "Public"
               }
@@ -16013,7 +16013,7 @@
                 "localId": "2",
                 "locator": "5:1-5:87",
                 "name": "LOINC:2.46",
-                "id": "LOINC",
+                "id": "2.16.840.1.113883.6.1",
                 "version": "urn:hl7:version:2.46",
                 "accessLevel": "Public"
               },
@@ -16021,7 +16021,7 @@
                 "localId": "3",
                 "locator": "6:1-6:97",
                 "name": "SNOMEDCT:2016-03",
-                "id": "SNOMED-CT",
+                "id": "2.16.840.1.113883.6.96",
                 "version": "urn:hl7:version:2016-03",
                 "accessLevel": "Public"
               },
@@ -16029,7 +16029,7 @@
                 "localId": "4",
                 "locator": "7:1-7:97",
                 "name": "SNOMEDCT:2017-03",
-                "id": "SNOMED-CT",
+                "id": "2.16.840.1.113883.6.96",
                 "version": "urn:hl7:version:2017-03",
                 "accessLevel": "Public"
               },
@@ -16037,7 +16037,7 @@
                 "localId": "5",
                 "locator": "8:1-8:97",
                 "name": "SNOMEDCT:2017-09",
-                "id": "SNOMED-CT",
+                "id": "2.16.840.1.113883.6.96",
                 "version": "urn:hl7:version:2017-09",
                 "accessLevel": "Public"
               }
@@ -18608,15 +18608,11 @@
       ],
       "description": "Patient Characteristic Payer: Payer",
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.58",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947cdc"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceb2",
       "qdmCategory": "patient_characteristic",
       "qdmStatus": "payer",
       "qdmTitle": "Patient Characteristic Payer",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::PatientCharacteristicPayer"
     },
@@ -18627,15 +18623,11 @@
       ],
       "description": "Patient Characteristic Sex: ONCAdministrativeSex",
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.55",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947cdd"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceb3",
       "qdmCategory": "patient_characteristic",
       "qdmStatus": "gender",
       "qdmTitle": "Patient Characteristic Sex",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "_type": "QDM::PatientCharacteristicSex"
     },
     {
@@ -18652,18 +18644,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947cde"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceb4",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -18676,16 +18665,13 @@
       ],
       "description": "Diagnosis: AlcoholandDrugDependence",
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.110",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947cdf"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceb5",
       "prevalencePeriod": null,
       "qdmCategory": "condition",
       "qdmTitle": "Diagnosis",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "qrdaOid": "2.16.840.1.113883.10.20.24.3.135",
+      "recorder": null,
       "severity": null,
       "_type": "QDM::Diagnosis"
     },
@@ -18703,18 +18689,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce0"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceb6",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -18732,18 +18715,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce1"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceb7",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -18755,17 +18735,14 @@
       ],
       "description": "Intervention, Order: Hospicecareambulatory",
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.35",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce2"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceb8",
       "negationRationale": null,
       "qdmCategory": "intervention",
       "qdmStatus": "order",
       "qdmTitle": "Intervention, Order",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "reason": null,
+      "requester": null,
       "_type": "QDM::InterventionOrder"
     },
     {
@@ -18776,17 +18753,15 @@
       ],
       "description": "Intervention, Performed: Hospicecareambulatory",
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.36",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce3"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceb9",
       "negationRationale": null,
+      "performer": null,
       "qdmCategory": "intervention",
       "qdmStatus": "performed",
       "qdmTitle": "Intervention, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "reason": null,
+      "relevantDatetime": null,
       "relevantPeriod": null,
       "result": null,
       "status": null,
@@ -18799,15 +18774,11 @@
       ],
       "description": "Patient Characteristic Ethnicity: Ethnicity",
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.56",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce4"
-      },
+      "id": "5d289cbf31fe5f8b54b9ceba",
       "qdmCategory": "patient_characteristic",
       "qdmStatus": "ethnicity",
       "qdmTitle": "Patient Characteristic Ethnicity",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "_type": "QDM::PatientCharacteristicEthnicity"
     },
     {
@@ -18824,18 +18795,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce5"
-      },
+      "id": "5d289cbf31fe5f8b54b9cebb",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -18853,18 +18821,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce6"
-      },
+      "id": "5d289cbf31fe5f8b54b9cebc",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -18875,15 +18840,11 @@
       ],
       "description": "Patient Characteristic Race: Race",
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.59",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce7"
-      },
+      "id": "5d289cbf31fe5f8b54b9cebd",
       "qdmCategory": "patient_characteristic",
       "qdmStatus": "race",
       "qdmTitle": "Patient Characteristic Race",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "_type": "QDM::PatientCharacteristicRace"
     },
     {
@@ -18900,18 +18861,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce8"
-      },
+      "id": "5d289cbf31fe5f8b54b9cebe",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -18929,18 +18887,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ce9"
-      },
+      "id": "5d289cbf31fe5f8b54b9cebf",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -18958,18 +18913,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947cea"
-      },
+      "id": "5d289cbf31fe5f8b54b9cec0",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -18987,18 +18939,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947ceb"
-      },
+      "id": "5d289cbf31fe5f8b54b9cec1",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     },
@@ -19016,18 +18965,15 @@
 
       ],
       "hqmfOid": "2.16.840.1.113883.10.20.28.4.5",
-      "id": {
-        "namingSystem": null,
-        "qdmVersion": "5.4",
-        "value": "5ca3699a5cc9752eb1947cec"
-      },
+      "id": "5d289cbf31fe5f8b54b9cec2",
       "lengthOfStay": null,
       "negationRationale": null,
-      "principalDiagnosis": null,
+      "participant": null,
+      "priority": null,
       "qdmCategory": "encounter",
       "qdmStatus": "performed",
       "qdmTitle": "Encounter, Performed",
-      "qdmVersion": "5.4",
+      "qdmVersion": "5.5",
       "relevantPeriod": null,
       "_type": "QDM::EncounterPerformed"
     }
@@ -19035,27 +18981,27 @@
   "title": "Initiation and Engagement of Alcohol and Other Drug Dependence Treatment",
   "updated_at": null,
   "value_set_ids": [
-    "5ca3699a5cc9752eb1947ced",
-    "5ca3699a5cc9752eb1947cee",
-    "5ca3699a5cc9752eb1947cef",
-    "5ca3699a5cc9752eb1947cf0",
-    "5ca3699a5cc9752eb1947cf1",
-    "5ca3699a5cc9752eb1947cf2",
-    "5ca3699a5cc9752eb1947cf3",
-    "5ca3699a5cc9752eb1947cf4",
-    "5ca3699a5cc9752eb1947cf5",
-    "5ca3699a5cc9752eb1947cf6",
-    "5ca3699a5cc9752eb1947cf7",
-    "5ca3699a5cc9752eb1947cf8",
-    "5ca3699a5cc9752eb1947cf9",
-    "5ca3699a5cc9752eb1947cfa",
-    "5ca3699a5cc9752eb1947cfb",
-    "5ca3699a5cc9752eb1947cfc",
-    "5ca3699a5cc9752eb1947cfd",
-    "5ca3699a5cc9752eb1947cfe",
-    "5ca3699a5cc9752eb1947cff",
-    "5ca3699a5cc9752eb1947d00",
-    "5ca3699a5cc9752eb1947d01",
-    "5ca3699a5cc9752eb1947d02"
+    "5d289cbf31fe5f8b54b9ce9c",
+    "5d289cbf31fe5f8b54b9ce9d",
+    "5d289cbf31fe5f8b54b9ce9e",
+    "5d289cbf31fe5f8b54b9ce9f",
+    "5d289cbf31fe5f8b54b9cea0",
+    "5d289cbf31fe5f8b54b9cea1",
+    "5d289cbf31fe5f8b54b9cea2",
+    "5d289cbf31fe5f8b54b9cea3",
+    "5d289cbf31fe5f8b54b9cea4",
+    "5d289cbf31fe5f8b54b9cea5",
+    "5d289cbf31fe5f8b54b9cea6",
+    "5d289cbf31fe5f8b54b9cea7",
+    "5d289cbf31fe5f8b54b9cea8",
+    "5d289cbf31fe5f8b54b9cea9",
+    "5d289cbf31fe5f8b54b9ceaa",
+    "5d289cbf31fe5f8b54b9ceab",
+    "5d289cbf31fe5f8b54b9ceac",
+    "5d289cbf31fe5f8b54b9cead",
+    "5d289cbf31fe5f8b54b9ceae",
+    "5d289cbf31fe5f8b54b9ceaf",
+    "5d289cbf31fe5f8b54b9ceb0",
+    "5d289cbf31fe5f8b54b9ceb1"
   ]
 }
