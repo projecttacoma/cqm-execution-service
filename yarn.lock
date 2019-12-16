@@ -547,9 +547,9 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
 cql-execution@~1.3.3:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/cql-execution/-/cql-execution-1.3.6.tgz#53bb4d047ed2fe7bc6436300cb29cbbc3fd1927a"
-  integrity sha512-23nZD5Pd/oiPcLVDa/2G4ER5UlP3veK78gUp2ORKEiadFVpO8Q8oZSn9rDlC7w8pigNv0P3EDARTNqDywOdSsQ==
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/cql-execution/-/cql-execution-1.3.7.tgz#bf302da698c6ed626fe37af62b93431a95ce64c2"
+  integrity sha512-5QP3q56Ox8M/js50eUS3hnJfFpjfgWMnzQPD5khmc1yeH7jnxYnIXMGo3wcCvM9eQ9y8v/IZfqddt3a9/pfnoA==
   dependencies:
     moment "^2.20.1"
     ucum "0.0.7"
@@ -879,9 +879,9 @@ fast-deep-equal@^2.0.1:
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
 
 fast-json-stable-stringify@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.0.0.tgz#d5142c0caee6b1189f87d3a76111064f86c8bbf2"
-  integrity sha1-1RQsDK7msRifh9OnYREGT4bIu/I=
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz#874bf69c6f404c2b5d99c481341399fd55892633"
+  integrity sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==
 
 fast-safe-stringify@^2.0.4:
   version "2.0.7"
@@ -1837,9 +1837,9 @@ mongoose-legacy-pluralize@1.0.2:
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
 
 mongoose@^5.4.14:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.8.0.tgz#ddbfd6849632ed5840ec3e5faeaab1945bb3b650"
-  integrity sha512-+VqrLGmHoDW/72yaXgiXSF7E/JcZ8Iyt7etrd4x3+Bj0z7k6GHHUBgGHP5ySPoG4J412RFuvHqx6xEOIuUrcfQ==
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.8.1.tgz#9a14a17a1e764d3d3397db95326b7ba03146b8eb"
+  integrity sha512-8Cffl52cMK2iBlpLipoRKW/RdrhkxvVzXsy+xVsfbKHQBCWkFiS0T0jU4smYzomTMP4gW0sReJoRA7Gu/7VVgQ==
   dependencies:
     bson "~1.1.1"
     kareem "2.3.1"
