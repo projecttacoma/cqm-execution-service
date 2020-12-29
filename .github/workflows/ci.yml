@@ -29,3 +29,5 @@ jobs:
         yarn docker-run
         sleep 3
         yarn testRunningServer
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
