@@ -1,0 +1,34 @@
+name: Continuous Integration
+on:
+  pull_request:
+    branches:
+      - master
+      - cypress_v6
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install Yarn
+      run: npm install -g yarn
+    - name: Run yarn
+      run: |
+        yarn install
+        yarn run test
+        yarn docker-build
+        yarn docker-run
+        sleep 3
+        yarn testRunningServer
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
