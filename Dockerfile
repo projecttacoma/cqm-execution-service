@@ -1,4 +1,4 @@
-FROM node:11-slim
+FROM node:18-buster-slim
 
 # Install app dependencies, including ssl_setup if it exists
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
