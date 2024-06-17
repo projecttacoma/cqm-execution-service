@@ -1,4 +1,4 @@
-FROM node:16-slim
+FROM node:20-slim
 
 # Install app dependencies, including ssl_setup if it exists
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
