@@ -1,6 +1,6 @@
 {
   "name": "cqm-execution-service",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "CQM Execution Service",
   "main": "server.js",
   "repository": "https://github.com/projecttacoma/cqm-execution-service.git",
@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "compression": "^1.7.3",
-    "cqm-execution": "~4.1.6",
+    "cqm-execution": "~4.2.1",
     "express": "^4.16.3",
     "winston": "~3.0.0"
   },
