@@ -121,9 +121,9 @@
     sparse-bitfield "^3.0.3"
 
 "@types/node@*":
-  version "22.15.18"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.18.tgz#2f8240f7e932f571c2d45f555ba0b6c3f7a75963"
-  integrity sha512-v1DKRfUdyW+jJhZNEI1PYy29S2YRxMV5AOO/x/SjKmW0acCIOqmbj6Haf9eHAhsPmrhlHSxEhv/1WszcLWV4cg==
+  version "22.15.27"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.15.27.tgz#b99cd64129c4c85a69edca903af9b3aa72c3b4f7"
+  integrity sha512-5fF+eu5mwihV2BeVtX5vijhdaZOfkQTATrePEaXTcKqI16LhJ7gi2/Vhd9OZM0UojcdmiOCVg5rrax+i1MdoQQ==
   dependencies:
     undici-types "~6.21.0"
 
@@ -619,19 +619,18 @@ cql-execution@2.4.1:
     luxon "^1.25.0"
 
 cqm-execution@~4.3.0:
-  version "4.3.2"
-  resolved "https://registry.yarnpkg.com/cqm-execution/-/cqm-execution-4.3.2.tgz#420fe235e0b042bf3529282d07e884b07a031c3d"
-  integrity sha512-XIXua5CVAXz3NIejPEwM5ECIQlnMSEQ759WRFXAQ3sc4MdHmCC7lkDl+u32ujqIrVproQs1OWWiALYstvZXgvw==
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/cqm-execution/-/cqm-execution-4.3.3.tgz#4621ade9f5ef438dd7bd918ad279d239af3acc79"
+  integrity sha512-4BZSCAEWnHJ8dO1lTZ1hEThUg+xRaVuyFS6NbZQgEu6XFfxilikGE+gE0jMTJFXXvNGrP6AbZxSiiElY26lSrQ==
   dependencies:
-    cqm-models "4.2.2"
+    cqm-models "4.2.3"
     lodash "^4.17.19"
     moment "^2.29.4"
-    yarn.lock "^0.0.1-security"
 
-cqm-models@4.2.2, cqm-models@~4.2.1:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/cqm-models/-/cqm-models-4.2.2.tgz#f0b74569e9da69072a338dbb464edd7f8b8f64b4"
-  integrity sha512-N6Egg1EaNf8aI7i3xxRq81GbBDOMUCKbHiYGoRIFqn6IXkpIuUE0hPQK5BUp7klngrb13gDYhQBCi/spK6YQYg==
+cqm-models@4.2.3, cqm-models@~4.2.1:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/cqm-models/-/cqm-models-4.2.3.tgz#0aa4405addf0d83ab7d2d2cf4e78b6f4aa17c574"
+  integrity sha512-Wa8GZTvn9ysI/g9zbuksyvUWiXOhCkmoQGj+Q/2/caBIG/9XFjLO67QrvkfXuojIBNKMMl9MSBTmYXm/Aomf5w==
   dependencies:
     cql-execution "2.4.1"
     mongoose "^7.8.4"
@@ -3385,8 +3384,3 @@ yargs@11.1.0:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
-
-yarn.lock@^0.0.1-security:
-  version "0.0.1-security"
-  resolved "https://registry.yarnpkg.com/yarn.lock/-/yarn.lock-0.0.1-security.tgz#8e7117924bfe916671b21f14212ba1bb49dfe0c7"
-  integrity sha512-ZRX6v5zGCJMI1T2aO+BQxJggy1vvorXEwonQhWXIC+brO7lkDB3zWelVNAti183ddH6FmJP8z4UDCJnJlioK4Q==
