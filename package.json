@@ -18,6 +18,9 @@
       "email": "lwosborne@mitre.org"
     }
   ],
+  "engines": {
+    "node": "22.16.x"
+  },
   "license": "Apache-2.0",
   "scripts": {
     "build-cql": "cd ./node_modules/cql-execution && yarn install && cd ../../",
