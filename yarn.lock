@@ -618,7 +618,7 @@ cql-execution@2.4.1:
     "@lhncbc/ucum-lhc" "^4.1.3"
     luxon "^1.25.0"
 
-cqm-execution@~4.3.0:
+cqm-execution@~4.3.3:
   version "4.3.3"
   resolved "https://registry.yarnpkg.com/cqm-execution/-/cqm-execution-4.3.3.tgz#4621ade9f5ef438dd7bd918ad279d239af3acc79"
   integrity sha512-4BZSCAEWnHJ8dO1lTZ1hEThUg+xRaVuyFS6NbZQgEu6XFfxilikGE+gE0jMTJFXXvNGrP6AbZxSiiElY26lSrQ==
@@ -627,10 +627,18 @@ cqm-execution@~4.3.0:
     lodash "^4.17.19"
     moment "^2.29.4"
 
-cqm-models@4.2.3, cqm-models@~4.2.1:
+cqm-models@4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/cqm-models/-/cqm-models-4.2.3.tgz#0aa4405addf0d83ab7d2d2cf4e78b6f4aa17c574"
   integrity sha512-Wa8GZTvn9ysI/g9zbuksyvUWiXOhCkmoQGj+Q/2/caBIG/9XFjLO67QrvkfXuojIBNKMMl9MSBTmYXm/Aomf5w==
+  dependencies:
+    cql-execution "2.4.1"
+    mongoose "^7.8.4"
+
+cqm-models@~4.2.3:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/cqm-models/-/cqm-models-4.2.4.tgz#8e928c3a3f3a2861dcde5f393129255291c77705"
+  integrity sha512-ZCC+3w/+D+9GU9mkxunnzCsDpebO3uDpOuZB2DO/uO2Mm6w7y3XAlZbqcMt0C/2DTY3wrO6yTTB/p0XKxU6qog==
   dependencies:
     cql-execution "2.4.1"
     mongoose "^7.8.4"

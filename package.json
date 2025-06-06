@@ -18,9 +18,6 @@
       "email": "lwosborne@mitre.org"
     }
   ],
-  "engines": {
-    "node": "20.14.x"
-  },
   "license": "Apache-2.0",
   "scripts": {
     "build-cql": "cd ./node_modules/cql-execution && yarn install && cd ../../",
@@ -35,8 +32,8 @@
   },
   "dependencies": {
     "compression": "^1.7.3",
-    "cqm-execution": "~4.3.0",
-    "cqm-models": "~4.2.1",
+    "cqm-execution": "~4.3.3",
+    "cqm-models": "~4.2.3",
     "express": "^4.16.3",
     "winston": "~3.0.0"
   },
