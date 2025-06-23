@@ -35,7 +35,10 @@ WORKDIR /usr/src/app
 RUN yarn install --only=production
 
 # clean up mitre certs from image
+USER root
 RUN rm -rf /usr/local/share/ca-certificates && /usr/sbin/update-ca-certificates
+
+USER app
 
 EXPOSE 8081
 
