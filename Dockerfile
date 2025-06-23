@@ -13,6 +13,10 @@ RUN apt-get update && apt-get install -y git-core
 # Bundle app source
 COPY . /usr/src/app
 
+RUN useradd -m app
+RUN chown -R app:app /usr/src/app
+USER app
+
 WORKDIR /usr/src/app
 
 RUN yarn install --only=production
