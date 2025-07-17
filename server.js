@@ -48,7 +48,7 @@ app.get('/version', function (request, response) {
  * @bodyparam patients - an array of cqm-models based patients to calculate for.
  * @bodyparam options - optional params for things like generating pretty results.
  */
-app.post('/calculate', function (request, response) {
+app.post('/calculate', async function (request, response) {
   // Certain params are required for this action, make sure they exist.
   let missing = []
   REQUIRED_PARAMS.forEach(function (param) {
@@ -76,7 +76,7 @@ app.post('/calculate', function (request, response) {
   }
 
   try {
-    results = calculator.calculate(measure, patients, valueSets, options);
+    results = await calculator.calculate(measure, patients, valueSets, options);
     logger.log({ level: 'info', message: 'GET /calculate. measure: ' + measure['cms_id'] + ' patient_count: ' + patients.length });
     response.json(results);
   } catch(error) {
